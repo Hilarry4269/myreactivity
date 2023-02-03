@@ -1,24 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Router } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import ReactDOM from "react-dom";
+import ContactUs from "./component/ContactUs";
+import AboutUs from "./component/AboutUs";
+import Login from "./component/Login";
+import Navbar from "./component/NavBar";
+import Footer from "./component/Footer";
+import SearchBar from "./component/SearchBar";
+import Home from "./component/Home";
+import "./component/Home.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <BrowserRouter>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/AboutUs">AboutUs</Link>
+            </li>
+            <li>
+              <Link to="/ContactUs">ContactUs</Link>
+            </li>
+          </ul>
+        </nav>
       </header>
-    </div>
+
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <main>
+              <h1>Welcome to my Website!</h1>
+              <p>This is My Blog React Project.</p>
+            </main>
+          }
+        />
+
+        <Route
+          path="/AboutUs"
+          element={
+            <main>
+              <h1>About</h1>
+              <p>This is the about page.</p>
+            </main>
+          }
+        />
+
+        <Route
+          path="/ContactUs"
+          element={
+            <main>
+              <h1>Contact</h1>
+              <p>This is the contact page.</p>
+            </main>
+          }
+        />
+      </Routes>
+
+      <footer>
+        <p>This is a Footer</p>
+      </footer>
+    </BrowserRouter>
   );
 }
 
