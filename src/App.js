@@ -7,7 +7,7 @@ import { Routes } from "react-router-dom";
 import ReactDOM from "react-dom";
 import ContactUs from "./component/ContactUs";
 import AboutUs from "./component/AboutUs";
-import Login from "./component/Login";
+import Login from "./component/Login"
 import Navbar from "./component/NavBar";
 import Footer from "./component/Footer";
 import SearchBar from "./component/SearchBar";
@@ -28,6 +28,12 @@ function App() {
             </li>
             <li>
               <Link to="/ContactUs">ContactUs</Link>
+            </li>
+            <li>
+              <Link to="/SearchBar">Search</Link>
+            </li>
+            <li>
+              <Link to="/Login">Login</Link>
             </li>
           </ul>
         </nav>
@@ -63,6 +69,25 @@ function App() {
               <p>This is the contact page.</p>
             </main>
           }
+        />
+
+        <Route
+          path="/SearchBar"
+          element={
+            <main>
+              <h1>Search</h1>
+              <p>This is my Search page</p>
+            </main>
+          }
+        />
+
+        <Route
+           path="/Login"
+          element={() => (
+            <main>
+              <Login/>
+            </main>
+          )}
         />
       </Routes>
 
